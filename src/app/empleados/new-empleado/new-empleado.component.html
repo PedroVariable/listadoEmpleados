@@ -1,0 +1,64 @@
+<!-- Botón para abrir el modal -->
+ <div class="align-item-center">
+    <button type="button" class="btn btn-primary w-100 p-3 " data-bs-toggle="modal" data-bs-target="#empleadoModal">
+        Agregar Nuevo Empleado
+      </button>
+ </div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="empleadoModal" tabindex="-1" aria-labelledby="empleadoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="empleadoModalLabel">Nuevo Empleado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario para nuevo empleado -->
+          <form (submit)="agregar()">
+            <div class="mb-3">
+                <label for="id" class="form-label">id</label>
+                <input type="number" class="form-control" id="id" [(ngModel)]="newEmpleado.id" name="id" required>
+              </div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" [(ngModel)]="newEmpleado.nombre" name="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="correo" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="correo" [(ngModel)]="newEmpleado.correo" name="correo" required>
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="number" class="form-control" id="telefono" [(ngModel)]="newEmpleado.telefono" name="telefono" required>
+            </div>
+            <div class="mb-3">
+              <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+              <input type="date" class="form-control" id="fechaNacimiento" [(ngModel)]="newEmpleado.fechaNacimiento" name="fechaNacimiento" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Sexo</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="sexo" id="sexoMasculino" [(ngModel)]="newEmpleado.sexo" value="M" required>
+                <label class="form-check-label" for="sexoMasculino">
+                  Masculino
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="sexo" id="sexoFemenino" [(ngModel)]="newEmpleado.sexo" value="F" required>
+                <label class="form-check-label" for="sexoFemenino">
+                  Femenino
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-primary">Guardar Empleado</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
